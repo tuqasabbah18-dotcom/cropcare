@@ -1,0 +1,327 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>دليل نبتتي</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Readex+Pro:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: one phone column built from slanted colour bands, echoing the supplied palette sheet */
+:root{
+  --farm:#0E5E45; --lettuce:#2FAE4B; --lemon-green:#A9D34A; --light-green:#E4EE9F;
+  --lemon:#F8D112; --pumpkin:#F59A3C; --chilli:#C21F3E;
+  --on-bright:#0B3A2C; --on-farm:#EFEEE3; --on-chilli:#FFFFFF;
+  --paper:#EFEEE3; --surface:#F8F8F0; --ink:#0B3A2C; --muted:#4B6B5E; --line:#CFD3C0;
+  --accent:#0E5E45; --tint:#E4EE9F;
+  --display:'Lalezar','Readex Pro',system-ui,sans-serif;
+  --body:'Readex Pro','Segoe UI',Tahoma,system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C241C; --surface:#143429; --ink:#EFEEE3; --muted:#A9C2B3; --line:#2A4A3C;
+    --accent:#A9D34A; --tint:#1F4A38; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C241C; --surface:#143429; --ink:#EFEEE3; --muted:#A9C2B3; --line:#2A4A3C;
+  --accent:#A9D34A; --tint:#1F4A38; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;
+  padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:560px;margin-inline:auto}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--pumpkin);outline-offset:2px}
+
+/* hero */
+.hero{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) ;margin-inline-end:calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  background:var(--farm);color:var(--on-farm);padding:36px max(20px,env(safe-area-inset-right,0px)) 74px max(20px,env(safe-area-inset-left,0px));
+  clip-path:polygon(0 0,100% 0,100% 90%,0 100%)}
+.hero .inner{max-width:560px;margin-inline:auto}
+.eyebrow{font-size:13px;letter-spacing:.06em;color:var(--light-green);margin:0 0 6px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,12vw,58px);line-height:1.1;margin:0 0 10px;text-wrap:balance}
+.hero p{margin:0;max-width:34ch;color:var(--on-farm);opacity:.92}
+.plants{display:block;width:100%;height:auto;margin-top:-44px;margin-bottom:22px;position:relative;overflow:visible}
+.plants .stem{fill:none;stroke:var(--lettuce);stroke-width:5;stroke-linecap:round}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(calc(var(--a) * -1))}to{transform:rotate(var(--a))}}
+.s1{--a:6deg;animation-duration:3.8s}
+.s2{--a:4.5deg;animation-duration:4.8s;animation-delay:-1.8s}
+.s3{--a:2.2deg;animation-duration:5.4s;animation-delay:-3s}
+.s4{--a:4deg;animation-duration:4.4s;animation-delay:-2.4s}
+.s5{--a:7deg;animation-duration:3.4s;animation-delay:-.9s}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.note.pop{animation:pop .35s ease}
+
+/* section labels (decorative slanted tags) */
+section{margin-block:0 34px}
+.tag{display:inline-block;font-family:var(--display);font-size:22px;line-height:1.2;padding:4px 22px 6px;margin:0 0 14px;
+  clip-path:polygon(0 8%,100% 0,96% 100%,3% 94%);color:var(--on-bright)}
+.t-lettuce{background:var(--lettuce)} .t-lg{background:var(--lemon-green)} .t-lemon{background:var(--lemon)}
+.t-pumpkin{background:var(--pumpkin)} .t-chilli{background:var(--chilli);color:var(--on-chilli)}
+.lead{color:var(--muted);margin:0 0 14px;font-size:15px}
+
+/* name + gift */
+.field{display:flex;gap:10px;align-items:center;background:var(--surface);border:1.5px solid var(--line);padding:6px 14px}
+.field label{font-size:14px;color:var(--muted);white-space:nowrap}
+.field input{flex:1;min-width:0;border:0;background:transparent;font-size:17px;padding:8px 0}
+.field input:focus-visible{outline:none}
+.field:focus-within{border-color:var(--accent)}
+.gift{display:block;width:100%;text-align:start;margin-top:12px;border:0;cursor:pointer;background:var(--lemon);color:var(--on-bright);padding:14px 18px;
+  font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.gift span:last-child{font-family:var(--display);font-size:22px}
+.note{margin:0;padding:16px 18px;background:var(--light-green);color:var(--on-bright);border-inline-start:6px solid var(--pumpkin);font-size:15.5px}
+.note[hidden]{display:none!important}
+
+/* chips */
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.chip{border:1.5px solid var(--line);background:var(--surface);padding:12px 14px;text-align:start;cursor:pointer;border-bottom:5px solid var(--line);min-width:0}
+.chip b{display:block;font-weight:600;font-size:15.5px}
+.chip small{display:block;color:var(--muted);font-size:13px;line-height:1.5}
+.chip[aria-pressed="true"]{border-color:var(--farm);border-bottom-color:var(--lettuce);background:var(--tint)}
+.chip[aria-pressed="true"] small{color:var(--ink)}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.card{background:var(--surface);border:1.5px solid var(--line);padding:14px;min-width:0}
+.card h3{margin:0 0 4px;font-size:13px;font-weight:500;color:var(--muted);display:flex;align-items:center;gap:8px}
+.card h3::before{content:"";width:12px;height:12px;background:var(--c);clip-path:polygon(25% 0,100% 0,75% 100%,0 100%)}
+.card p{margin:0;font-weight:500;font-size:15px;line-height:1.55}
+.tip{margin:12px 0 0;padding:12px 16px;background:var(--tint);font-size:14.5px}
+
+/* result panel */
+.result{margin-top:14px;padding:16px 18px;border-inline-start:8px solid var(--c,var(--line));background:var(--surface);border-block:1.5px solid var(--line);border-inline-end:1.5px solid var(--line)}
+.badge{display:inline-block;font-weight:600;font-size:13px;padding:2px 12px;background:var(--c);color:var(--bc,var(--on-bright));margin-bottom:6px}
+.result p{margin:0}
+
+/* watering */
+.meter{height:16px;background:var(--tint);margin:14px 0 8px;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,99% 100%,1% 100%)}
+.meter i{position:absolute;inset-block:0;inset-inline-start:0;background:var(--c,var(--lettuce));width:0;transition:width .5s ease,background .3s}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+.btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;padding:12px 22px;font-weight:600;background:var(--farm);color:var(--on-farm);flex:1;min-width:150px}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--line);flex:0 0 auto;min-width:0;font-weight:400}
+details{margin-top:14px;background:var(--surface);border:1.5px solid var(--line)}
+summary{cursor:pointer;padding:12px 16px;font-weight:500;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:22px;line-height:1;color:var(--accent)}
+details[open] summary::after{content:"−"}
+details ol{margin:0;padding:0 36px 14px 16px;font-size:15px}
+details li{margin-bottom:4px}
+
+footer{font-size:13px;color:var(--muted);border-top:1.5px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion:reduce){.meter i{transition:none}.note.pop{animation:none}.sway{animation:none}}
+@media (max-width:380px){.cards{grid-template-columns:1fr}}
+</style>
+
+<div dir="rtl" lang="ar">
+<header class="hero"><div class="inner">
+  <p class="eyebrow">دليل العناية بنبتتك</p>
+  <h1 id="title">أهلاً بنبتتك الجديدة</h1>
+  <p>هذه الصفحة تصاحب هديتك. اختر نوع النبتة ومكانها، وسنخبرك متى تسقيها وماذا تفعل إذا تغيّر لون أوراقها.</p>
+</div></header>
+
+<div class="wrap">
+<svg class="plants" viewBox="0 0 560 112" aria-hidden="true" focusable="false">
+  <g class="sway s1">
+  <path class="stem" d="M52 110V68"/>
+  <path d="M52 80C32 80 22 64 24 52C40 54 52 64 52 80Z" style="fill:var(--lettuce)"/>
+  <path d="M52 70C72 70 82 54 78 42C62 44 52 56 52 70Z" style="fill:var(--lemon-green)"/></g>
+  <g class="sway s2">
+  <path class="stem" d="M170 110V52"/>
+  <path d="M170 56C140 56 124 34 132 12C152 8 170 26 170 56Z" style="fill:var(--lettuce)"/>
+  <path d="M170 56C200 56 216 34 208 12C188 8 170 26 170 56Z" style="fill:var(--lemon-green)"/></g>
+  <g class="sway s3">
+  <path class="stem" d="M268 86H256V66M292 76H304V58" style="stroke-width:9"/>
+  <rect x="268" y="42" width="24" height="70" rx="12" style="fill:var(--lettuce)"/>
+  <circle cx="280" cy="40" r="6" style="fill:var(--chilli)"/></g>
+  <g class="sway s4">
+  <path d="M382 112C378 78 380 44 390 12C400 44 402 78 398 112Z" style="fill:var(--lettuce)"/>
+  <path d="M364 112C358 86 358 62 366 38C374 62 378 86 376 112Z" style="fill:var(--lemon-green)"/>
+  <path d="M404 112C404 86 408 66 420 44C426 68 424 90 416 112Z" style="fill:var(--lemon-green)"/></g>
+  <g class="sway s5">
+  <path class="stem" d="M510 110V58"/>
+  <path d="M510 92C526 92 532 82 532 72C518 72 510 80 510 92Z" style="fill:var(--lettuce)"/>
+  <g style="fill:var(--pumpkin)">
+    <circle cx="510" cy="30" r="9"/><circle cx="521" cy="37" r="9"/><circle cx="521" cy="50" r="9"/>
+    <circle cx="510" cy="57" r="9"/><circle cx="499" cy="50" r="9"/><circle cx="499" cy="37" r="9"/>
+  </g>
+  <circle cx="510" cy="43.5" r="8" style="fill:var(--lemon)"/></g>
+  <rect x="0" y="109" width="560" height="3" style="fill:var(--line)"/>
+</svg>
+
+<section>
+  <span class="tag t-lemon">ابدأ من هنا</span>
+  <div class="field"><label for="plantName">اسم نبتتك</label><input id="plantName" type="text" maxlength="24" placeholder="مثلاً: زيتونة" autocomplete="off"></div>
+  <button class="gift" id="giftBtn" aria-expanded="false" aria-controls="giftNote"><span id="giftLabel">افتح بطاقة الإهداء</span><span aria-hidden="true">✦</span></button>
+  <p class="note" id="giftNote" hidden>كل ورقة جديدة تخرج من هذه النبتة تذكير صغير بأن الأشياء الجميلة تحتاج وقتاً وعناية، وأنك تستحق الاثنين.</p>
+</section>
+
+<section>
+  <span class="tag t-lettuce">ما نوع نبتتك؟</span>
+  <p class="lead">تجد النوع مكتوباً على بطاقة الغرسة داخل العلبة.</p>
+  <div class="chips" id="typeChips" role="group" aria-label="نوع النبتة"></div>
+  <div class="cards" id="careCards"></div>
+  <p class="tip" id="careTip"></p>
+</section>
+
+<section>
+  <span class="tag t-lg">أين أضعها؟</span>
+  <div class="chips" id="spotChips" role="group" aria-label="مكان النبتة"></div>
+  <div class="result" id="spotResult" hidden></div>
+</section>
+
+<section>
+  <span class="tag t-pumpkin">موعد السقاية</span>
+  <p class="lead" id="waterLead"></p>
+  <div class="result" id="waterResult"></div>
+  <div class="meter" aria-hidden="true"><i id="meterFill"></i></div>
+  <div class="row"><span id="lastLabel">لم تسجّل سقاية بعد</span><span id="nextLabel"></span></div>
+  <div class="btns">
+    <button class="btn" id="waterBtn">سقيتها الآن</button>
+    <button class="btn ghost" id="resetBtn">مسح السجل</button>
+  </div>
+  <details>
+    <summary>كيف أعرف أن التربة تحتاج ماء؟</summary>
+    <ol>
+      <li>ادفع إصبعك في التربة حتى المفصل الأول.</li>
+      <li>إن خرج نظيفاً وجافاً فاسقِها حتى يخرج الماء من ثقب الأسفل.</li>
+      <li>إن علق به تراب رطب فانتظر يوماً أو يومين.</li>
+      <li>أفرغ الصحن بعد عشر دقائق ولا تتركها واقفة في الماء.</li>
+    </ol>
+  </details>
+</section>
+
+<section>
+  <span class="tag t-chilli">شيء غريب في أوراقها؟</span>
+  <div class="chips" id="symChips" role="group" aria-label="الأعراض"></div>
+  <div class="result" id="symResult" hidden></div>
+</section>
+
+<footer>يحفظ الدليل اسم النبتة وآخر سقاية على هذا الهاتف فقط. امسح الرمز مرة أخرى في أي وقت وستجد كل شيء كما تركته.</footer>
+</div>
+</div>
+
+<script>
+(function(){
+  var TYPES = {
+    tropical:{name:'نبتة ورقية',hint:'أوراق عريضة خضراء',interval:7,light:'ضوء ساطع غير مباشر',water:'كل 7 أيام تقريباً',soil:'تربة خفيفة جيدة التصريف',temp:'بين 18 و27 درجة',tip:'امسح أوراقها بقماشة رطبة كل أسبوعين لتتنفس وتلمع.'},
+    succulent:{name:'صبار أو عصارية',hint:'أوراق سميكة تخزّن الماء',interval:14,light:'شمس مباشرة عدة ساعات',water:'كل 14 يوماً، وأقل في الشتاء',soil:'تربة رملية سريعة الجفاف',temp:'بين 15 و30 درجة',tip:'الماء الزائد أخطر عليها من العطش. إن شككت فانتظر يوماً.'},
+    herb:{name:'أعشاب عطرية',hint:'نعناع، ريحان، إكليل الجبل',interval:3,light:'نحو 6 ساعات شمس',water:'كل 3 أيام تقريباً',soil:'تربة غنية ورطبة قليلاً',temp:'بين 18 و25 درجة',tip:'اقطف الأوراق من القمة بانتظام، فتتفرع النبتة وتكبر.'}
+  };
+  var SPOTS = {
+    sun:{name:'نافذة مشمسة',hint:'شمس مباشرة'},
+    bright:{name:'قرب النافذة',hint:'ضوء ساطع دون شمس مباشرة'},
+    dim:{name:'غرفة خافتة',hint:'ضوء قليل'}
+  };
+  var MATCH = {
+    tropical:{sun:['ok','تصلح مؤقتاً. الشمس المباشرة تحرق أوراقها، فضع ستارة شفافة أو ابتعد متراً عن الزجاج.'],bright:['great','هذا مكانها المثالي. أدرها ربع دورة كل أسبوع لينمو الشكل متوازناً.'],dim:['poor','ضوؤها قليل. ستنمو ببطء وتطول سيقانها. اقتربي بها من نافذة قدر الإمكان.']},
+    succulent:{sun:['great','مكان ممتاز. ستحافظ على لونها وشكلها المدمج.'],bright:['ok','مقبول. راقب سيقانها، فإن طالت وانحنت فهي تطلب ضوءاً أكثر.'],dim:['poor','لا تناسبها. ستمتد وتضعف وقد تتعفن جذورها. انقلها إلى أسطع مكان عندك.']},
+    herb:{sun:['great','أفضل مكان لها. ستعطيك أوراقاً عطرية كثيفة.'],bright:['ok','تنمو لكن بنكهة أخف. جرّب أن تمنحها ساعات شمس إضافية صباحاً.'],dim:['poor','الأعشاب تذبل بسرعة في الظل. انقلها إلى نافذة تدخلها الشمس.']}
+  };
+  var LEVEL = {great:{label:'مناسب جداً',c:'var(--lettuce)',bc:'var(--on-bright)'},ok:{label:'مقبول',c:'var(--lemon)',bc:'var(--on-bright)'},poor:{label:'غير مناسب',c:'var(--chilli)',bc:'var(--on-chilli)'}};
+  var SYMS = [
+    {k:'yellow',name:'أوراق صفراء',cause:'غالباً ماء زائد',fix:'أوقف السقاية حتى تجف التربة بعمق إصبع، وتأكد أن الإناء له ثقب تصريف وأن الصحن فارغ.',c:'var(--lemon)',bc:'var(--on-bright)'},
+    {k:'brown',name:'أطراف بنية جافة',cause:'هواء جاف أو سقاية غير منتظمة',fix:'ثبّت موعداً للسقاية، وأبعدها عن مكيف أو مدفأة، وقصّ الأطراف البنية بمقص نظيف.',c:'var(--pumpkin)',bc:'var(--on-bright)'},
+    {k:'droop',name:'ذبول',cause:'عطش، أو جذور مختنقة بالماء',fix:'افحص التربة. إن كانت جافة فاسقِها وستنتعش خلال ساعات. إن كانت مبللة فتوقف عن السقاية وانقلها لإناء أخف تربة.',c:'var(--chilli)',bc:'var(--on-chilli)'},
+    {k:'leggy',name:'سيقان طويلة وأوراق متباعدة',cause:'ضوء قليل',fix:'انقلها إلى مكان أسطع تدريجياً، وقصّ الأطراف الطويلة لتتفرع من جديد.',c:'var(--lemon-green)',bc:'var(--on-bright)'}
+  ];
+
+  var S = {name:'',type:'tropical',spot:'',last:0};
+  function load(){ try{ var r=localStorage.getItem('plantGuide'); if(r){ var o=JSON.parse(r); for(var k in o) S[k]=o[k]; } }catch(e){} }
+  function save(){ try{ localStorage.setItem('plantGuide',JSON.stringify(S)); }catch(e){} }
+  var $ = function(id){ return document.getElementById(id); };
+
+  function chips(el, items, current, onPick){
+    el.innerHTML='';
+    items.forEach(function(it){
+      var b=document.createElement('button'); b.className='chip'; b.type='button';
+      b.setAttribute('aria-pressed', String(it.key===current));
+      b.innerHTML='<b></b><small></small>'; b.firstChild.textContent=it.name; b.lastChild.textContent=it.hint;
+      b.addEventListener('click',function(){ onPick(it.key); });
+      el.appendChild(b);
+    });
+  }
+  function list(obj){ return Object.keys(obj).map(function(k){ return {key:k,name:obj[k].name,hint:obj[k].hint}; }); }
+
+  function renderType(){
+    chips($('typeChips'), list(TYPES), S.type, function(k){ S.type=k; save(); renderAll(); });
+    var t=TYPES[S.type];
+    var cards=[['الضوء',t.light,'var(--lemon)'],['الماء',t.water,'var(--lettuce)'],['التربة',t.soil,'var(--pumpkin)'],['الحرارة',t.temp,'var(--chilli)']];
+    $('careCards').innerHTML = cards.map(function(c){ return '<div class="card" style="--c:'+c[2]+'"><h3>'+c[0]+'</h3><p>'+c[1]+'</p></div>'; }).join('');
+    $('careTip').textContent = t.tip;
+  }
+  function renderSpot(){
+    chips($('spotChips'), list(SPOTS), S.spot, function(k){ S.spot=k; save(); renderSpot(); });
+    var box=$('spotResult');
+    if(!S.spot){ box.hidden=true; return; }
+    var m=MATCH[S.type][S.spot], L=LEVEL[m[0]];
+    box.hidden=false; box.style.setProperty('--c',L.c); box.style.setProperty('--bc',L.bc);
+    box.innerHTML='<span class="badge"></span><p></p>';
+    box.firstChild.textContent=L.label; box.lastChild.textContent=m[1];
+  }
+  function renderWater(){
+    var t=TYPES[S.type], iv=t.interval, box=$('waterResult'), fill=$('meterFill');
+    $('waterLead').textContent='تحتاج '+t.name+' إلى سقاية '+t.water+'. سجّل كل مرة تسقيها فيها وسأحسب لك الموعد القادم.';
+    var level, msg, ratio=0;
+    if(!S.last){
+      level={label:'ابدأ التسجيل',c:'var(--lemon-green)',bc:'var(--on-bright)'}; msg='اضغط «سقيتها الآن» بعد أول سقاية.';
+      $('lastLabel').textContent='لم تسجّل سقاية بعد'; $('nextLabel').textContent='';
+    } else {
+      var days=Math.floor((Date.now()-S.last)/86400000); if(days<0) days=0;
+      ratio=days/iv; var left=iv-days;
+      $('lastLabel').textContent = days===0 ? 'آخر سقاية: اليوم' : 'آخر سقاية: قبل '+days+' يوم';
+      if(ratio<0.7){ level={label:'تربتها رطبة',c:'var(--lettuce)',bc:'var(--on-bright)'}; msg='لا تسقِها الآن. الموعد بعد '+left+' يوم تقريباً.'; $('nextLabel').textContent='بعد '+left+' يوم'; }
+      else if(ratio<1){ level={label:'اقترب الموعد',c:'var(--lemon)',bc:'var(--on-bright)'}; msg='افحص التربة بإصبعك. إن كانت جافة فاسقِها اليوم أو غداً.'; $('nextLabel').textContent=left>0?'بعد '+left+' يوم':'اليوم'; }
+      else { level={label:'حان وقت السقاية',c:'var(--chilli)',bc:'var(--on-chilli)'}; msg='مرّ أكثر من '+iv+' أيام. اسقِها حتى يخرج الماء من الأسفل.'; $('nextLabel').textContent='الآن'; }
+    }
+    box.style.setProperty('--c',level.c); box.style.setProperty('--bc',level.bc);
+    box.innerHTML='<span class="badge"></span><p></p>'; box.firstChild.textContent=level.label; box.lastChild.textContent=msg;
+    fill.style.setProperty('--c',level.c); fill.style.width=Math.round(Math.min(ratio,1)*100)+'%';
+  }
+  function renderSym(){
+    var el=$('symChips'); el.innerHTML='';
+    SYMS.forEach(function(s){
+      var b=document.createElement('button'); b.className='chip'; b.type='button'; b.setAttribute('aria-pressed','false');
+      b.innerHTML='<b></b>'; b.firstChild.textContent=s.name;
+      b.addEventListener('click',function(){
+        [].forEach.call(el.children,function(x){ x.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true');
+        var r=$('symResult'); r.hidden=false; r.style.setProperty('--c',s.c); r.style.setProperty('--bc',s.bc);
+        r.innerHTML='<span class="badge"></span><p></p>'; r.firstChild.textContent=s.cause; r.lastChild.textContent=s.fix;
+      });
+      el.appendChild(b);
+    });
+  }
+  function renderName(){
+    $('title').textContent = S.name ? 'أهلاً بـ'+S.name : 'أهلاً بنبتتك الجديدة';
+  }
+  function renderAll(){ renderName(); renderType(); renderSpot(); renderWater(); }
+
+  load();
+  $('plantName').value=S.name;
+  $('plantName').addEventListener('input',function(e){ S.name=e.target.value.trim(); save(); renderName(); });
+  var NOTES = [
+    'كل ورقة جديدة تخرج من هذه النبتة تذكير صغير بأن الأشياء الجميلة تحتاج وقتاً وعناية، وأنك تستحق الاثنين.',
+    'أردت لهديتي أن تكبر معك، فاخترت لك شيئاً يكبر كل يوم.',
+    'وجودك في حياتي يشبه هذه النبتة: هادئ، ينعش المكان، ولا أتخيل البيت من دونه.',
+    'قليل من الماء وكثير من الحب، وستكبر كما تكبر الأشياء التي نحبها.',
+    'ليكن في بيتك ركن أخضر يذكّرك أن البدايات الصغيرة تصير يوماً ظلاً كبيراً.',
+    'هذه ليست مجرد نبتة. هي دعوة لتتمهل وتتنفس وتنظر إلى ما ينمو حولك.',
+    'أتمنى أن تجد فيها كل صباح سبباً صغيراً للفرح.',
+    'شكراً على وجودك في حياتي. هذه النبتة طريقتي في قول ما لا تكفيه الكلمات.'
+  ];
+  var lastNote = -1;
+  $('giftBtn').addEventListener('click',function(){
+    var i; do { i = Math.floor(Math.random()*NOTES.length); } while(i===lastNote && NOTES.length>1);
+    lastNote = i;
+    var n=$('giftNote');
+    n.classList.remove('pop'); void n.offsetWidth;
+    n.textContent = NOTES[i]; n.hidden=false; n.classList.add('pop');
+    this.setAttribute('aria-expanded','true');
+    $('giftLabel').textContent='رسالة أخرى';
+  });
+  $('waterBtn').addEventListener('click',function(){ S.last=Date.now(); save(); renderWater(); });
+  $('resetBtn').addEventListener('click',function(){ S.last=0; save(); renderWater(); });
+  renderSym(); renderAll();
+})();
+</script>
+
+</body></html>
